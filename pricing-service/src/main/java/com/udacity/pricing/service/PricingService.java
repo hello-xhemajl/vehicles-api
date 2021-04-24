@@ -17,7 +17,7 @@ public class PricingService {
     /**
      * Holds {ID: Price} pairings (current implementation allows for 20 vehicles)
      */
-    private static final Map<Long, Price> PRICES = LongStream
+    public static final Map<Long, Price> PRICES = LongStream
             .range(1, 20)
             .mapToObj(i -> new Price("USD", randomPrice(), i))
             .collect(Collectors.toMap(Price::getVehicleId, p -> p));
